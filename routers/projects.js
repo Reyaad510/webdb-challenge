@@ -16,6 +16,21 @@ router.get('/', async(req, res) => {
 })
 
 
+// Add Project
+router.post('/', async(req,res) => {
+    const project = req.body;
+    try {
+      if(project.name && project.description) {
+      const newProject = await db.addProject(project);
+      res.status(201).json(newProject);
+      } else {
+          res.status(400).json({ message: 'Please provide name and description for your project!' })
+      }
+    } catch(error) {
+        res.status(500).json({ message: 'We ran into an error creating the project. :('})
+    }
+})
+
 
 
 

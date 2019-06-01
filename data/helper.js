@@ -8,12 +8,12 @@ const getProjects = () => {
 }
 
 const getProject = id => {
-    return db('project').where({ id: Number(id) });
+    return db('projects').where({ id: Number(id) });
 }
 
 
 const addProject = project => {
-    return db('project').insert(project);
+    return db('projects').insert(project);
 }
 
 const addAction = action => {
