@@ -1,5 +1,6 @@
 // Update with your config settings.
 // yarn knex init 
+// knex is a javascript query builder for relational databases
 
 module.exports = {
 

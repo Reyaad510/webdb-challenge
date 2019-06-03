@@ -3,6 +3,10 @@ const knex = require('knex');
 const config = require('../knexfile.js').development;
 const db = knex(config);
 
+
+
+// Projects
+
 const getProjects = () => {
     return db('projects');
 }
@@ -24,12 +28,15 @@ const getProject = async id => {
 
 
 const addProject = project => {
-    return db('projects').insert(project);
+    return db('projects').insert(project);}
+
+
+
+// Actions
+
+const getActions = () => {
+    return db('actions');
 }
-
-
-
-
 
 const addAction = action => {
     return db('actions').insert(action);
@@ -40,5 +47,6 @@ module.exports = {
     getProjects,
     getProject,
     addProject,
-    addAction
+    addAction,
+    getActions
 }
