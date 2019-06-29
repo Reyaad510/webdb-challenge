@@ -2,6 +2,9 @@ const router = require('express').Router();
 const db = require('../data/helper.js');
 
 
+// /api/actions
+
+// Get actions
 
 router.get('/', async(req, res) => {
   try {
@@ -14,6 +17,7 @@ router.get('/', async(req, res) => {
 
 
   // Add Action
+  
 router.post('/', async(req,res) => {
   const action = req.body;
   try {

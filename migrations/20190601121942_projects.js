@@ -7,7 +7,7 @@ exports.up = async function(knex) {
       tbl.increments('id')
       tbl.string('name').notNullable()
       tbl.string('description').notNullable()
-      tbl.boolean('completed')
+      tbl.boolean('completed').defaultTo(false);
   })
 
   // Actions Table
@@ -15,7 +15,7 @@ exports.up = async function(knex) {
       tbl.increments('id')
       tbl.string('description').notNullable()
       tbl.string('notes')
-      tbl.boolean('completed')
+      tbl.boolean('completed').defaultTo(false);
       tbl
         .integer('project_id')
         .references('id')
